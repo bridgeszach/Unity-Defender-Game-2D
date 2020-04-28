@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 9150127410442796037}
   - component: {fileID: -5553554887723793561}
   - component: {fileID: 9169241843274956284}
-  m_Layer: 0
+  - component: {fileID: 6831572000550432148}
+  - component: {fileID: 4406012286998682360}
+  m_Layer: 9
   m_Name: Orange Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +111,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 2.5
+  projectile: {fileID: 5811809715408645164, guid: e0d4141f2a6ff4147b909005be89e901,
+    type: 3}
+  projectileSpeed: 10
+  deathVFX: {fileID: 7917553584975704018, guid: 0e619e77e28d6e64ea77740741bafe3c,
+    type: 3}
+  durationOfExplosion: 1
+  deathSound: {fileID: 8300000, guid: 16a5f6bde796ce644b80fb8c50d57a17, type: 3}
+  deathSoundVolume: 0.4
+  shootSound: {fileID: 8300000, guid: 942ca9d87802f5b4c83449a77c6d7d33, type: 3}
+  shootSoundVolume: 0.1
 --- !u!58 &9169241843274956284
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -119,9 +134,43 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.46500006
+--- !u!50 &6831572000550432148
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758769464977671927}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &4406012286998682360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758769464977671927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d86b8295c241848aa5f30ffd3cbb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
